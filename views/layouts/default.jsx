@@ -4,12 +4,21 @@ function Default(html) {
     return (
       <html>
       <head>
-        <title>{html.title || 'Default'}</title>
+        <!-- normalize & skeleton links -->
+        <link rel="stylesheet" href="/main.css" />
       </head>
+
       <body>
-        <h1>HTML Rendered!</h1>
-        {html.children}
-      </body>
+  <div className="wrapper">
+    <header>
+      <h1><a href="/breads">BreadCRUD</a></h1>
+    </header>
+    <div className="container">
+      {html.children}
+    </div>
+  </div>
+</body>
+
       </html>
     )
   }
