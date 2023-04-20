@@ -26,6 +26,10 @@ app.get('*', (req, res) => {
   res.send('404')
 })
 
+// MIDDLEWARE
+app.use(express.urlencoded({extended: true}))
+
+
 // LISTEN
 app.listen(PORT, () => {
   console.log('listening on port', PORT);

@@ -4,7 +4,6 @@ function Default(html) {
     return (
       <html>
       <head>
-        <!-- normalize & skeleton links -->
         <link rel="stylesheet" href="/main.css" />
       </head>
 
