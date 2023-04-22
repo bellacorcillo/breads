@@ -8,8 +8,7 @@ breads.get('/', (req, res) => {
       {
         breads: Bread,
         title: 'Index Page'
-      }
-    )
+      })
 })
 
 // NEW
@@ -22,10 +21,11 @@ breads.get('/new', (req, res) => {
 breads.get('/:arrayIndex', (req, res) => {
   if (Bread[req.params.arrayIndex]) {
     res.render('Show', {
-      bread:Bread[req.params.arrayIndex]
+      bread:Bread[req.params.arrayIndex],
+      index: req.params.arrayIndex,
     })
   } else {
-    res.send('404')
+    res.render('404')
   }
 })
 
@@ -41,6 +41,14 @@ breads.post('/', (req, res) => {
   }
   Bread.push(req.body)
   res.redirect('/breads')
+})
+
+// DELETE
+bread_router.delete('/:id', (req, res) => {
+  Bread.findByIdAndDelete(req.params.id)
+      .then(deletedBread => {
+          res.status(303).redirect('/breads')
+      })
 })
 
 
