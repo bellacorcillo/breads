@@ -18,9 +18,8 @@ function Edit ({bread, index}) {
           <input
             type="text"
             name="image"
-            id="image"
+            id="image"/>
             defaultValue={bread.image}
-          />
           <label htmlFor="hasGluten">Has Gluten?</label>
           <input
             type="checkbox"
@@ -34,4 +33,5 @@ function Edit ({bread, index}) {
       </Default>
     )
 }
+
 module.exports = Edit
