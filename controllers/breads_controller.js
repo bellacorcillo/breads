@@ -51,15 +51,14 @@ breads.get('/:id/edit', (req, res) => {
 // SHOW
 breads.get('/:id', (req, res) => {
   Bread.findById(req.params.id)
-    .then(foundBread => {
-      res.render('show', {
-        bread: foundBread
+      .then(foundBread => {
+        const bakedBy = foundBread.getBakedBy() 
+        console.log(bakedBy)
+        res.render('show', {
+            bread: foundBread
+        })
       })
     })
-    .catch(err => {
-      res.send('404')
-    })
-})
 
 
 // CREATE

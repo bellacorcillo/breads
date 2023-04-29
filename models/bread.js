@@ -14,6 +14,12 @@ const breadSchema = new Schema({
     }
 })
 
+// helper methods 
+breadSchema.methods.getBakedBy = function(){
+    return `${this.name} was baked with love by ${this.baker}`
+  }
+  
+
 // model and export 
 const Bread = mongoose.model('Bread', breadSchema)
 
