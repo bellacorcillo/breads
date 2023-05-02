@@ -16,8 +16,6 @@ bread_router.get('/', async (req, res) => {
 })
 
 
-
-
 // NEW
 bread_router.get('/new', (req, res) => {
     Baker.find()

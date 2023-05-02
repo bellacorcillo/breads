@@ -1,18 +1,22 @@
 // require mongoose 
 const mongoose = require('mongoose')
 // creating shorthand for the Schema constructor 
-const { Schema } = mongoose 
+const { Schema } = mongoose
+const Baker = require('./baker');
 
 // schema
 const breadSchema = new Schema({
-    name: { type: String, required: true },
-    hasGluten: Boolean,
-    image: { type: String, default: 'http://placehold.it/500x500.png' },
-    baker: {
-      type: String,
-      enum: ['Rachel', 'Monica', 'Joey', 'Chandler', 'Ross', 'Phoebe']
-    }
-})
+  name: {
+    type: String,
+    required: true
+  },
+  baker: {
+    type: Schema.Types.ObjectId,
+    ref: 'Baker',
+    required: true
+  },
+  ingredients: [String]
+});
 
 // helper methods 
 breadSchema.methods.getBakedBy = function(){
