@@ -31,7 +31,6 @@ breads.get('/', (req, res) => {
       })
 })
 
-
 // NEW
 breads.get('/new', (req, res) => {
   res.render('new')
@@ -90,7 +89,6 @@ breads.delete('/:id', (req, res) => {
       res.status(303).redirect('/breads')
     })
 })
-
 
 // UPDATE
 breads.put('/:id', (req, res) => {

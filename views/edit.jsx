@@ -1,4 +1,4 @@
-onst React = require('react')
+const React = require('react')
 const Default = require('./layouts/Default')
 
 function Edit({ bread, bakers }) {
