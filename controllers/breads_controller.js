@@ -1,7 +1,7 @@
 const express = require('express')
 const bread_router = express.Router()
 const Bread = require('../models/bread.js')
-const Baker = require('../models/baker')
+const Baker = require('../models/baker.js')
 
 // Index:
 bread_router.get('/', async (req, res) => {

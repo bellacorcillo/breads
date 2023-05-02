@@ -18,8 +18,6 @@ function Index({ breads, bakers, title }) {
                     })
                 }
             </ul>
-
-
             <h3>Breads</h3>
             <ul>
                 {

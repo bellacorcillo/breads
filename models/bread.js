@@ -2,21 +2,18 @@
 const mongoose = require('mongoose')
 // creating shorthand for the Schema constructor 
 const { Schema } = mongoose
-const Baker = require('./baker');
 
 // schema
 const breadSchema = new Schema({
-  name: {
-    type: String,
-    required: true
-  },
+  name: { type: String, required: true },
+  hasGluten: Boolean,
+  image: { type: String, default: 'http://placehold.it/500x500.png' },
   baker: {
-    type: Schema.Types.ObjectId,
-    ref: 'Baker',
-    required: true
-  },
-  ingredients: [String]
-});
+    type: Schema.Types.ObjectID,
+    ref: 'Baker'
+  }
+})
+
 
 // helper methods 
 breadSchema.methods.getBakedBy = function(){
